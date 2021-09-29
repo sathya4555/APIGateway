@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="http://localhost:4000/style">
+
+</head>
+
+<body>
+    <h1>IOT Test</h1>
+    <div class="main">
+        <h2>Choose a device:</h2>
+        <div class="select">
+            <select name="device" id="device">
+                <option value="1">iot_device_1</option>
+                <option value="2">iot_device_2</option>
+                <option value="3">iot_device_3</option>
+            </select>
+        </div>
+        <br>
+        <button id="connect" onclick="connectConnection()" class="connect">Connect</button>
+        <button id="disconnect" onclick="disconnectConnection()" class="disconnect">Disconnect</button>
+
+
+        <br><br><br>
+
+
+        <br> <br><br>
+        <div style=" width: 100%; display: table;">
+            <div style="  display: table-row;">
+                <div style="   width:10cm; display: table-cell; ">iot_device_id</div>
+                <div style="   width:10cm; display: table-cell; ">Volts-Solar</div>
+                <div style="  width:10cm; display: table-cell;">Amps-Solar</div>
+                <div style="  width:10cm;display: table-cell; ">Gyro-X</div>
+                <div style="  width:10cm;display: table-cell; ">Gyro-Y</div>
+                <div style="   width:10cm; display: table-cell; ">Gyro-Z</div>
+            </div>
+        </div>
+
+        <div style=" width: 100%; display: table;">
+            <div style="  display: table-row;">
+                <div style=" width:10cm; display: table-cell; " id="iot_device_id"></div>
+                <div style="   width:10cm; display: table-cell; " id="Volts-Solar"></div>
+                <div style="   width:10cm;display: table-cell; " id="Amps-Solar"></div>
+                <div style=" width:10cm; display: table-cell; " id="Gyro-X"></div>
+                <div style="   width:10cm;display: table-cell; " id="Gyro-Y"></div>
+                <div style="   display: table-cell; " id="Gyro-Z"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="http://localhost:4000/socket.io"></script>
+    <script>
+
+        let headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', 'http://api-gateway.dev.atpltd.net');
+        var socket = io("https://localhost");
+        var socketid = "";
+
+        socket.on('connect', function () {
+            socketid = socket.id;
+        });
+
+
+
+        socket.on('message', function (data) {
+
+            str = JSON.parse(JSON.parse(data));
+
+
+            document.getElementById('iot_device_id').innerHTML = str["iot_device_id"];
+            document.getElementById('Volts-Solar').innerHTML = str["Volts-Solar"];
+            document.getElementById('Amps-Solar').innerHTML = str["Amps-Solar"];
+            document.getElementById('Gyro-X').innerHTML = str["Gyro-X"];
+            document.getElementById('Gyro-Y').innerHTML = str["Gyro-Y"];
+            document.getElementById('Gyro-Z').innerHTML = str["Gyro-Z"];
+
+            console.log(str["iot_device_id"]);
+
+
+        });
+
+      // EXAMPLE JSON WHICH COMES FROM THE DEVICE-SIDE. 
+
+        /* {"project_id":6,
+            "client_id":4,
+            "iot_device_id":3,
+            "Volts-Battery":0.43,
+            "Volts-Solar":0.007167,
+            "Amps-Solar":30,
+            "Gyro-X":225,
+            "Gyro-Y":225, 
+            "Gyro-Z":225,
+            "recording_date_time":"Tue Feb 23 18:14:46 2021"
+            }
+         */
+
+        function connectConnection() {
+
+            var e = document.getElementById("device");
+        
+            var deviceid = e.options[e.selectedIndex].value;
+            console.log(typeof deviceid);
+            console.log(deviceid);
+            var url1 = "https://localhost";
+
+            var url2 = url1.concat(deviceid + "/");
+            var finalurl = url2.concat(socketid);
+
+
+            let request = new XMLHttpRequest(); request.open("GET", finalurl);
+            request.onload = function () {
+                var response = request.responseText;
+
+                alert(response);
+
+            }
+            request.send();
+
+        }
+
+        function disconnectConnection() {
+
+            var e = document.getElementById("device");
+            var deviceid = e.options[e.selectedIndex].value;
+            var url1 = "https://localhost/";
+
+
+
+            var url2 = url1.concat(deviceid + "/");
+            var finalurl = url2.concat(socketid);
+
+
+
+            let request = new XMLHttpRequest(); request.open("GET", finalurl);
+            request.onload = function () {
+                var response = request.responseText;
+
+                alert(response);
+
+            }
+            request.send();
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

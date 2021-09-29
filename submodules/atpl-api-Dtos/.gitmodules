@@ -1,0 +1,4 @@
+
+[submodule "submodules/atpl-api-common"]
+	path = submodules/atpl-api-common
+	url = https://github.com/Antronsys/atpl-api-common.git

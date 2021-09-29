@@ -1,0 +1,6 @@
+[submodule "submodules/atpl-api-Dtos"]
+	path = submodules/atpl-api-Dtos
+	url = https://github.com/Antronsys/atpl-api-Dtos.git
+[submodule "submodules/atpl-api-AWS"]
+	path = submodules/atpl-api-AWS
+	url = https://github.com/Antronsys/atpl-api-AWS.git

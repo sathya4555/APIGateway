@@ -1,0 +1,904 @@
+{
+  "Topics": [
+    {
+      "TopicName": "ALERTCONFIGS_ADD",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "POST",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "InsertAlertConfigs",
+          "OnSuccessTopicsToPush": [
+            "ALERTCONFIGS_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_ADD-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_ADD-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_ADD-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_ADD:77ed0735-8b71-411d-a891-3dd01e645934"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_ADD"
+    },
+    {
+      "TopicName": "ALERTCONFIGS_UPDATE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "PUT",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "UpdateAlertConfigs",
+          "OnSuccessTopicsToPush": [
+            "ALERTCONFIGS_UPDATED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_UPDATE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_UPDATE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_UPDATE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_UPDATE:78d28fba-4cb8-4ab5-9c08-8aa4f2ff76dc"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_UPDATE"
+    },
+    {
+      "TopicName": "ALERTCONFIGS_DELETE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "DELETE",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "DeleteAlertConfigs",
+          "OnSuccessTopicsToPush": [
+            "ALERTCONFIGS_DELETED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_DELETE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_DELETE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_DELETE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_DELETE:a5b96d15-8446-4707-b28b-4fae52b50280"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_DELETE"
+    },
+    {
+      "TopicName": "IOTDEVICE_ADD",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "POST",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "InsertIotDevice",
+          "OnSuccessTopicsToPush": [
+            "IOTDEVICE_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_ADD-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_ADD-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_ADD-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_ADD:47941219-fdd8-4f14-bf79-5b40ea0c539d"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_ADD"
+    },
+    {
+      "TopicName": "IOTDEVICE_UPDATE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "PUT",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "UpdateIotDevice",
+          "OnSuccessTopicsToPush": [
+            "IOTDEVICE_UPDATED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_UPDATE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_UPDATE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_UPDATE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_UPDATE:46ed8a19-82c2-4f07-a494-0044b10228b4"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_UPDATE"
+    },
+    {
+      "TopicName": "IOTDEVICE_DELETE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "DELETE",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "DeleteIotDevice",
+          "OnSuccessTopicsToPush": [
+            "IOTDEVICE_DELETED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_DELETE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_DELETE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_DELETE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_DELETE:b4ebec2d-31ae-4466-88a6-0fd1aa6c6c68"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_DELETE"
+    },
+    {
+      "TopicName": "SENSORDATA_ADD",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "POST",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "InsertSensorData",
+          "OnSuccessTopicsToPush": [
+            "SENSORDATA_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_ADD-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_ADD-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_ADD-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_ADD:d317cd62-e54a-436c-a760-ea5c97b8262d"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_ADD"
+    },
+    {
+      "TopicName": "SENSORDATA_UPDATE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "PUT",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "UpdateSensorData",
+          "OnSuccessTopicsToPush": [
+            "SENSORDATA_UPDATED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_UPDATE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_UPDATE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_UPDATE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_UPDATE:a650d600-d6ff-4672-8852-4b7554bbae35"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_UPDATE"
+    },
+    {
+      "TopicName": "SENSORDATA_DELETE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "DELETE",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "DeleteSensorData",
+          "OnSuccessTopicsToPush": [
+            "SENSORDATA_DELETED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_DELETE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_DELETE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_DELETE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_DELETE:075cc93f-aad5-462f-aa26-de4ac6539fab"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_DELETE"
+    },
+    {
+      "TopicName": "SENSORS_ADD",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "POST",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "InsertSensorS",
+          "OnSuccessTopicsToPush": [
+            "SENSORS_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_ADD-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_ADD-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_ADD-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_ADD:c02589fc-b98e-4c20-a3d5-e0a0887513f8"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_ADD"
+    },
+    {
+      "TopicName": "SENSORS_UPDATE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "PUT",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "UpdateSensors",
+          "OnSuccessTopicsToPush": [
+            "SENSORS_UPDATED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_UPDATE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_UPDATE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_UPDATE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_UPDATE:abc35253-1129-4b7f-ac24-d0eaffccf865"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_UPDATE"
+    },
+    {
+      "TopicName": "SENSORS_DELETE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "DELETE",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "DeleteSensors",
+          "OnSuccessTopicsToPush": [
+            "SENSORS_DELETED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_DELETE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_DELETE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_DELETE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_DELETE:94524127-ab7f-41bb-bb5d-7225ee61fbb4"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_DELETE"
+    },
+    {
+      "TopicName": "SENSORTYPE_ADD",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "POST",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "InsertSensorType",
+          "OnSuccessTopicsToPush": [
+            "SENSORTYPE_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_ADD-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_ADD-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_ADD-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_ADD:d7c79a4d-cb54-44f8-8933-f461358d7078"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_ADD"
+    },
+    {
+      "TopicName": "SENSORTYPE_UPDATE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "PUT",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "UpdateSensorType",
+          "OnSuccessTopicsToPush": [
+            "SENSORTYPE_UPDATED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_UPDATE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_UPDATE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_UPDATE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_UPDATE:16b9dc9d-5be1-4bc1-8521-4aa480751c49"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_UPDATE"
+    },
+    {
+      "TopicName": "SENSORTYPE_DELETE",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "DELETE",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "DeleteSensorType",
+          "OnSuccessTopicsToPush": [
+            "SENSORTYPE_DELETED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_DELETE-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_DELETE-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_DELETE-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_DELETE:d040660b-e85c-4a40-8be3-76f22c1e0073"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_DELETE"
+    },
+    {
+      "TopicName": "ALERTCONFIGS_ADDED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendAlertConfigsAddedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_ADDED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_ADDED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_ADDED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_ADDED:9d470033-7abf-4611-9435-3a2a6af8754b"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_ADDED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_ADDED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_ADDED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_ADDED:e462670b-c878-471a-b060-76e0fc2d116b"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_ADDED"
+    },
+    {
+      "TopicName": "ALERTCONFIGS_UPDATED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendAlertConfigsUpdatedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_UPDATED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_UPDATED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_UPDATED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_UPDATED:7ee3d815-544e-4350-bf8d-ad00b7045df4"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_UPDATED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_UPDATED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_UPDATED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_UPDATED:da2a52ec-6d50-498a-a6ec-0ad757017574"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_UPDATED"
+    },
+    {
+      "TopicName": "ALERTCONFIGS_DELETED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendAlertConfigsDeletedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_DELETED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_DELETED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_DELETED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_DELETED:0fc0b477-7099-4cf7-9df8-a58d38cf0f34"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "ALERTCONFIGS_DELETED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/ALERTCONFIGS_DELETED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:ALERTCONFIGS_DELETED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_DELETED:85e6ad4d-9268-440e-9f57-45e56439476d"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:ALERTCONFIGS_DELETED"
+    },
+    {
+      "TopicName": "IOTDEVICE_ADDED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendIotDeviceAddedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_ADDED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_ADDED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_ADDED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_ADDED:fc51a623-1de3-4585-91e8-d6895473cdcf"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_ADDED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_ADDED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_ADDED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_ADDED:350cbdb0-144e-4bbd-bcd4-abbaee6df098"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_ADDED"
+    },
+    {
+      "TopicName": "IOTDEVICE_UPDATED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendIotDeviceUpdatedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_UPDATED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_UPDATED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_UPDATED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_UPDATED:e3824c24-65c2-440c-bef0-620b3e9317d6"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_UPDATED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_UPDATED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_UPDATED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_UPDATED:366bd2d7-687a-4594-8f05-963e92296d51"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_UPDATED"
+    },
+    {
+      "TopicName": "IOTDEVICE_DELETED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendIotDeviceDeletedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_DELETED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_DELETED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_DELETED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_DELETED:f2959945-e844-45ae-b185-b06e31f2bbfa"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "IOTDEVICE_DELETED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/IOTDEVICE_DELETED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:IOTDEVICE_DELETED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_DELETED:84ad40b4-5753-4017-8495-afe413e6fe37"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:IOTDEVICE_DELETED"
+    },
+    {
+      "TopicName": "SENSORDATA_ADDED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorDataAddedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_ADDED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_ADDED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_ADDED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_ADDED:7076da60-def4-4295-8cf1-1de12f461a51"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_ADDED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_ADDED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_ADDED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_ADDED:c2f676e3-e003-436b-83b9-06b49ebf6a04"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_ADDED"
+    },
+    {
+      "TopicName": "SENSORDATA_UPDATED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorDataUpdatedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_UPDATED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_UPDATED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_UPDATED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_UPDATED:85079240-c132-4e90-b1b1-704adb50d848"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_UPDATED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_UPDATED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_UPDATED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_UPDATED:6feb9a51-a251-4021-80c4-ad4a47227594"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_UPDATED"
+    },
+    {
+      "TopicName": "SENSORDATA_DELETED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorDataDeletedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_DELETED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_DELETED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_DELETED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_DELETED:1d27de64-0c09-472b-9c86-adb88267b8e5"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORDATA_DELETED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORDATA_DELETED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORDATA_DELETED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_DELETED:780c85dd-051a-40a7-aca7-96d204c5309d"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORDATA_DELETED"
+    },
+    {
+      "TopicName": "SENSORTYPE_ADDED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorTypeAddedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_ADDED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_ADDED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_ADDED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_ADDED:ee42b8a1-c64d-4273-95d7-d10ff420f6f6"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_ADDED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_ADDED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_ADDED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_ADDED:2466e1b9-7310-4d67-ab56-b6c90b81adab"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_ADDED"
+    },
+    {
+      "TopicName": "SENSORTYPE_UPDATED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorTypeUpdatedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_UPDATED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_UPDATED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_UPDATED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_UPDATED:c3c6f481-87a1-40db-a837-d053640c9f59"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_UPDATED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_UPDATED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_UPDATED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_UPDATED:5b03cce7-e8ec-47a8-ae5a-e0d889d80817"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_UPDATED"
+    },
+    {
+      "TopicName": "SENSORTYPE_DELETED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorTypeDeletedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_DELETED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_DELETED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_DELETED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_DELETED:6fc72eb4-9e32-430a-9d27-750e31feea99"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORTYPE_DELETED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORTYPE_DELETED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORTYPE_DELETED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_DELETED:439e9240-1deb-4bc1-ba2b-ba2463ed2c4e"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORTYPE_DELETED"
+    },
+    {
+      "TopicName": "SENSORS_ADDED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorsAddedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_ADDED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_ADDED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_ADDED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_ADDED:75b03055-a266-47fd-a43b-aadfa2fc0002"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_ADDED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_ADDED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_ADDED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_ADDED:e4687e81-8586-4b89-9dbd-61124bc76b3f"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_ADDED"
+    },
+    {
+      "TopicName": "SENSORS_UPDATED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorsUpdatedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_UPDATED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_UPDATED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_UPDATED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_UPDATED:292a0eac-9978-466e-b21a-d58c121b4700"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_UPDATED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_UPDATED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_UPDATED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_UPDATED:8150636b-9533-4677-82a1-bb49d286cea7"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_UPDATED"
+    },
+    {
+      "TopicName": "SENSORS_DELETED",
+      "Publishers": [
+        "IOT_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "IOT_SERVICE",
+          "Function": "SendSensorsDeletedNotificationToAdmin",
+          "OnSuccessTopicsToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_DELETED-IOT_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_DELETED-IOT_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_DELETED-IOT_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_DELETED:7309717f-e95e-48a0-86fd-9e71d5f97eb6"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessTopicsToPush": [],
+          "OnFailureTopicsToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "SENSORS_DELETED-API_GATEWAY_SERVICE",
+          "QueueUrl": "https://sqs.us-west-2.amazonaws.com/915966410640/SENSORS_DELETED-API_GATEWAY_SERVICE",
+          "QueueArn": "arn:aws:sqs:us-west-2:915966410640:SENSORS_DELETED-API_GATEWAY_SERVICE",
+          "SubscriptionArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_DELETED:4c793afc-cc8d-423a-9de7-ba57d1e70c88"
+        }
+      ],
+      "TopicArn": "arn:aws:sns:us-west-2:915966410640:SENSORS_DELETED"
+    }
+  ]
+}

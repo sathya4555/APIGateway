@@ -1,0 +1,151 @@
+{
+  "Exchanges": [
+    {
+      "ExchangeName": "STUDENT_ADD",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "POST",
+      "Subscribers": [
+        {
+          "Service": "STUDENTCOURSE_SERVICE",
+          "Function": "InsertSTUDENT",
+          "OnSuccessExchangesToPush": [
+            "STUDENT_ADDED"
+          ],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "STUDENT_ADD-STUDENTCOURSE_SERVICE"
+        }
+      ]
+    },
+    {
+      "ExchangeName": "STUDENT_ADDED",
+      "Publishers": [
+        "STUDENTCOURSE_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "STUDENTCOURSE_SERVICE",
+          "Function": "SendSTUDENTAddedNotificationToAdmin",
+          "OnSuccessExchangesToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "STUDENT_ADDED-STUDENTCOURSE_SERVICE"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessExchangesToPush": [],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "STUDENT_ADDED-API_GATEWAY_SERVICE"
+        }
+      ]
+    },
+    {
+      "ExchangeName": "COURSE_ADD",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "POST",
+      "Subscribers": [
+        {
+          "Service": "STUDENTCOURSE_SERVICE",
+          "Function": "InsertCOURSE",
+          "OnSuccessExchangesToPush": [
+            "COURSE_ADDED"
+          ],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "COURSE_ADD-STUDENTCOURSE_SERVICE"
+        }
+      ]
+    },
+    {
+      "ExchangeName": "COURSE_ADDED",
+      "Publishers": [
+        "STUDENTCOURSE_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "STUDENTCOURSE_SERVICE",
+          "Function": "SendCOURSEAddedNotificationToAdmin",
+          "OnSuccessExchangesToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "COURSE_ADDED-STUDENTCOURSE_SERVICE"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessExchangesToPush": [],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "COURSE_ADDED-API_GATEWAY_SERVICE"
+        }
+      ]
+    },
+    {
+      "ExchangeName": "REGISTRATION_ADD",
+      "Publishers": [
+        "API_GATEWAY_SERVICE"
+      ],
+      "Method": "POST",
+      "Subscribers": [
+        {
+          "Service": "STUDENTCOURSE_SERVICE",
+          "Function": "InsertREGISTRATION",
+          "OnSuccessExchangesToPush": [
+            "REGISTRATION_ADDED"
+          ],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "REGISTRATION_ADD-STUDENTCOURSE_SERVICE"
+        }
+      ]
+    },
+    {
+      "ExchangeName": "REGISTRATION_ADDED",
+      "Publishers": [
+        "STUDENTCOURSE_SERVICE"
+      ],
+      "Method": "UNKNOWN",
+      "Subscribers": [
+        {
+          "Service": "STUDENTCOURSE_SERVICE",
+          "Function": "SendREGISTRATIONAddedNotificationToAdmin",
+          "OnSuccessExchangesToPush": [
+            "NOTIFICATION_ADDED"
+          ],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "REGISTRATION_ADDED-STUDENTCOURSE_SERVICE"
+        },
+        {
+          "Service": "API_GATEWAY_SERVICE",
+          "Function": "FunctionNameToAcknowledgeUIHandle",
+          "OnSuccessExchangesToPush": [],
+          "OnFailureExchangesToPush": [
+            "ERROR_RECEIVER"
+          ],
+          "QueueName": "REGISTRATION_ADDED-API_GATEWAY_SERVICE"
+        }
+      ]
+    }
+  ]
+}
